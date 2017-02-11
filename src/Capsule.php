@@ -120,9 +120,9 @@ class Capsule implements \ArrayAccess
      * @param int    $code    Error code.
      * @param string $message Error message.
      */
-    public function setError(int $code, string $message = '')
+    public function setError(int $code, string $message = null)
     {
         $this->errorCode = $code;
-        $this->errorMessage = $message;
+        $this->errorMessage = $message ?? '';
     }
 }
