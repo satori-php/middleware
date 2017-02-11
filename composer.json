@@ -1,6 +1,6 @@
 {
     "name": "satori/middleware",
-    "description": "Middleware",
+    "description": "Middleware components",
     "keywords": ["Middleware"],
     "license": "MIT",
     "authors": [
