@@ -1,7 +1,7 @@
 {
     "name": "satori/middleware",
     "description": "Middleware components",
-    "keywords": ["Middleware"],
+    "keywords": ["Satori", "Middleware"],
     "license": "MIT",
     "authors": [
         {
@@ -15,6 +15,9 @@
     "autoload": {
         "psr-4": {
             "Satori\\Middleware\\": ["src/", "tests/"]
-        }
+        },
+        "files": [
+            "src/dummy.php"
+        ]
     }
 }
