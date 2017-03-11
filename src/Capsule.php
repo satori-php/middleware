@@ -10,10 +10,13 @@ declare(strict_types=1);
 
 namespace Satori\Middleware;
 
+/**
+ * Data capsule for middleware.
+ */
 class Capsule implements \ArrayAccess
 {
     /**
-     * @var mixed[] Contains granules.
+     * @var array<string, mixed> Contains granules.
      */
     private $granules = [];
 
@@ -91,6 +94,8 @@ class Capsule implements \ArrayAccess
     /**
      * Returns error code.
      *
+     * @throws \LogicException If error code is not defined.
+     *
      * @return int Error code.
      */
     public function getErrorCode(): int
@@ -99,11 +104,13 @@ class Capsule implements \ArrayAccess
 
             return $this->errorCode;
         }
-        throw new \LogicException('Error is not defined.');
+        throw new \LogicException('Error code is not defined.');
     }
 
     /**
      * Returns error message.
+     *
+     * @throws \LogicException If error message is not defined.
      *
      * @return string Error message.
      */
@@ -113,7 +120,7 @@ class Capsule implements \ArrayAccess
 
             return $this->errorMessage;
         }
-        throw new \LogicException('Error is not defined.');
+        throw new \LogicException('Error message is not defined.');
     }
 
     /**
