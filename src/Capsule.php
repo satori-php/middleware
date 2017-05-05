@@ -47,7 +47,7 @@ class Capsule implements \ArrayAccess
      *
      * @param string $key The unique key of the granule.
      *
-     * @throws \LogicException If the granule is not defined.
+     * @throws \OutOfBoundsException If the granule is not defined.
      *
      * @return mixed
      */
@@ -57,7 +57,7 @@ class Capsule implements \ArrayAccess
 
             return $this->granules[$key];
         }
-        throw new \LogicException(sprintf('Granule "%s" is not defined.', $key));
+        throw new \OutOfBoundsException(sprintf('Granule "%s" is not defined.', $key));
     }
 
     /**
@@ -94,7 +94,7 @@ class Capsule implements \ArrayAccess
     /**
      * Returns error code.
      *
-     * @throws \LogicException If error code is not defined.
+     * @throws \RuntimeException If error code is not defined.
      *
      * @return int Error code.
      */
@@ -104,13 +104,13 @@ class Capsule implements \ArrayAccess
 
             return $this->errorCode;
         }
-        throw new \LogicException('Error code is not defined.');
+        throw new \RuntimeException('Error code is not defined.');
     }
 
     /**
      * Returns error message.
      *
-     * @throws \LogicException If error message is not defined.
+     * @throws \RuntimeException If error message is not defined.
      *
      * @return string Error message.
      */
@@ -120,7 +120,7 @@ class Capsule implements \ArrayAccess
 
             return $this->errorMessage;
         }
-        throw new \LogicException('Error message is not defined.');
+        throw new \RuntimeException('Error message is not defined.');
     }
 
     /**
