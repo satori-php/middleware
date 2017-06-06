@@ -21,16 +21,6 @@ class Capsule implements \ArrayAccess
     private $granules = [];
 
     /**
-     * @var int Error code.
-     */
-    private $errorCode;
-
-    /**
-     * @var string Error message.
-     */
-    private $errorMessage;
-
-    /**
      * Checks if a granule is set.
      *
      * @param string $key The unique key of the granule.
@@ -79,59 +69,5 @@ class Capsule implements \ArrayAccess
     public function offsetUnset($key)
     {
         unset($this->granules[$key]);
-    }
-
-    /**
-     * Checks if an error is set.
-     *
-     * @return bool
-     */
-    public function hasError(): bool
-    {
-        return isset($this->errorCode);
-    }
-
-    /**
-     * Returns error code.
-     *
-     * @throws \RuntimeException If error code is not defined.
-     *
-     * @return int Error code.
-     */
-    public function getErrorCode(): int
-    {
-        if (isset($this->errorCode)) {
-
-            return $this->errorCode;
-        }
-        throw new \RuntimeException('Error code is not defined.');
-    }
-
-    /**
-     * Returns error message.
-     *
-     * @throws \RuntimeException If error message is not defined.
-     *
-     * @return string Error message.
-     */
-    public function getErrorMessage(): string
-    {
-        if (isset($this->errorMessage)) {
-
-            return $this->errorMessage;
-        }
-        throw new \RuntimeException('Error message is not defined.');
-    }
-
-    /**
-     * Sets an error.
-     *
-     * @param int    $code    Error code.
-     * @param string $message Error message.
-     */
-    public function setError(int $code, string $message = null)
-    {
-        $this->errorCode = $code;
-        $this->errorMessage = $message ?? '';
     }
 }
