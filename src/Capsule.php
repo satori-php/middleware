@@ -25,9 +25,9 @@ class Capsule implements \ArrayAccess
      *
      * @param array $initialData The initial data.
      */
-    public function __construct(array $initialData)
+    public function __construct(array $initialData = null)
     {
-        $this->granules = $initialData;
+        $this->granules = $initialData ?? [];
     }
 
     /**
