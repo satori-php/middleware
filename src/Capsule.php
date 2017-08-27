@@ -21,6 +21,16 @@ class Capsule implements \ArrayAccess
     private $granules = [];
 
     /**
+     * Constructor.
+     *
+     * @param array $initialData The initial data.
+     */
+    public function __construct(array $initialData)
+    {
+        $this->granules = $initialData;
+    }
+
+    /**
      * Checks if a granule is set.
      *
      * @param string $key The unique key of the granule.
