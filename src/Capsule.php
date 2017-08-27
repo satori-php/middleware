@@ -23,7 +23,7 @@ class Capsule implements \ArrayAccess
     /**
      * Constructor.
      *
-     * @param array $initialData The initial data.
+     * @param array<string, mixed> $initialData The initial data.
      */
     public function __construct(array $initialData = null)
     {
