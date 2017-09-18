@@ -28,6 +28,7 @@ class Capsule implements \ArrayAccess
     public function __construct(array $initialData = null)
     {
         $this->granules = $initialData ?? [];
+        $this->granules['data'] = $this->granules['data'] ?? [];
     }
 
     /**
